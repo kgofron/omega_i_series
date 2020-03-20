@@ -1,0 +1,4 @@
+NAME=ct-CNi32
+PORT=4101
+HOST=xf23ida-ioc1
+USER=softioc

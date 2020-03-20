@@ -1,0 +1,14 @@
+syntax: glob
+bin/linux-x86/*
+bin/linux-x86_64/*
+db/*
+dbd/*
+#*.o
+O.*
+as/*
+*~
+envPaths
+info_positions.req
+info_settings.req
+records.dbl
+.viminfo

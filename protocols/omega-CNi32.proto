@@ -1,0 +1,77 @@
+Terminator = CR;
+LockTimeout = 2000;
+ReplyTimeout = 2000;
+ReadTimeout = 2000;
+WriteTimeout = 2000;
+
+initialize {
+	# Set to FFFF.F Precision with a Filtering of 1
+	out "*\$1W0802";
+	in  "\$1W08";
+	# Set to RTD 3-wire, 385 Curve
+	out "*\$1W0711";
+	in "\$1W07";
+	# Set to PID control 
+	# 4-20mA
+	# Auto PID Disable
+	# Direct
+	# Time proportional PID
+	out "*\$1W0C41";
+	in "\$1W0C"; 
+	# Setup Alarm 2 (Relay) 
+	out "*\$1W0A89";
+	in "\$1W0A";
+	# Set Alarm point to 30degC
+	out "*\$1W1520012C";
+	in "\$1W15";
+	# Set Alarm point to 30degC
+	out "*\$1W1620012C";
+	in "\$1W16";
+	# Set LEDs
+	out "*\$1W1121";
+	in "\$1W11";
+	# Reset Controller
+	out "*\$1Z02";
+	in "\$1Z02";
+	wait 5000;
+}
+
+ReadX {
+	ExtraInput = Ignore;
+	out "*\$1X\$2";
+	in "\$1X\$2%f";
+	@mismatch { in "\?\$1X\$2%f"; }
+	@init { initialize }
+}
+
+ReadSP {
+	out "*\$1R\$2";
+	in "\$1R\$22%X";
+	@mismatch { in "\?\$1R\$22%X"; }
+}
+
+WriteSP {
+	out "*\$1W\$22%05X";
+	in "\$1W\$2";
+	out "*\$1Z02";
+	in "\$1Z02";
+	wait 5000;
+	@init { ReadSP; }
+}
+
+ReadPID {
+	out "*\$1R\$2";
+	in "\$1R\$2%X";
+	@mismatch { in "\?\$1R\$2%X"; }
+}
+
+WritePID {
+	out "*\$1W\$2%04X";
+	in "\$1W\$2";
+	@mismatch { in "\?\$1W\$2"; }
+	out "*\$1Z02";
+	in "\$1Z02";
+	@mismatch { in "\?\$1Z02"; }
+	wait 5000;
+	@init { ReadPID; }
+}
