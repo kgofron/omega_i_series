@@ -3,6 +3,7 @@ LockTimeout = 2000;
 ReplyTimeout = 2000;
 ReadTimeout = 2000;
 WriteTimeout = 2000;
+MaxInput = 20;
 
 initialize {
 	# Set to FFFF.F Precision with a Filtering of 1
@@ -56,7 +57,7 @@ WriteSP {
 	out "*\$1Z02";
 	in "\$1Z02";
 	wait 5000;
-	@init { ReadSP; }
+	#@init { ReadSP; }
 }
 
 ReadPID {
@@ -73,5 +74,5 @@ WritePID {
 	in "\$1Z02";
 	@mismatch { in "\?\$1Z02"; }
 	wait 5000;
-	@init { ReadPID; }
+	#@init { ReadPID; }
 }
