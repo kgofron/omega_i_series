@@ -53,9 +53,9 @@ ReadSP {
 
 WriteSP {
 	out "*\$1W\$22%05X";
-	in "\$1W\$2";
+	#in "\$1W\$2";
 	out "*\$1Z02";
-	in "\$1Z02";
+	#in "\$1Z02";
 	wait 5000;
 	#@init { ReadSP; }
 }
@@ -68,11 +68,11 @@ ReadPID {
 
 WritePID {
 	out "*\$1W\$2%04X";
-	in "\$1W\$2";
-	@mismatch { in "\?\$1W\$2"; }
+	#in "\$1W\$2";
+	#@mismatch { in "\?\$1W\$2"; }
 	out "*\$1Z02";
-	in "\$1Z02";
-	@mismatch { in "\?\$1Z02"; }
+	#in "\$1Z02";
+	#@mismatch { in "\?\$1Z02"; }
 	wait 5000;
 	#@init { ReadPID; }
 }
