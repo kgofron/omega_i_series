@@ -16,6 +16,7 @@ DBD += omegaCNi32.dbd
 #omegaCNi32_DBD += base.dbd
 omegaCNi32_DBD += base.dbd
 omegaCNi32_DBD += asyn.dbd
+omegaCNi32_DBD += calc.dbd
 omegaCNi32_DBD += stream.dbd
 omegaCNi32_DBD += drvAsynIPPort.dbd
 omegaCNi32_DBD += drvAsynSerialPort.dbd
@@ -30,7 +31,7 @@ omegaCNi32_DBD += asSupport.dbd # for autosave/restore
 omegaCNi32_DBD += asubFunctions.dbd
 
 # Add all the support libraries needed by this IOC
-omegaCNi32_LIBS += asyn stream autosave devIocStats caPutLog
+omegaCNi32_LIBS += asyn calc stream autosave devIocStats caPutLog
 
 # omegaCNi32_registerRecordDeviceDriver.cpp derives from omegaCNi32.dbd
 omegaCNi32_SRCS += omegaCNi32_registerRecordDeviceDriver.cpp
