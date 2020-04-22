@@ -16,7 +16,9 @@ DBD += omegaCNi32.dbd
 #omegaCNi32_DBD += base.dbd
 omegaCNi32_DBD += base.dbd
 omegaCNi32_DBD += asyn.dbd
-omegaCNi32_DBD += calcRecord.dbd
+ifneq ($(CALC),)
+	omegaCNi32_DBD += calc.dbd
+endif
 omegaCNi32_DBD += stream.dbd
 omegaCNi32_DBD += drvAsynIPPort.dbd
 omegaCNi32_DBD += drvAsynSerialPort.dbd
