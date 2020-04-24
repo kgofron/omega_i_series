@@ -1,0 +1,5 @@
+set_savefile_path("${TOP}/as","/save")
+set_requestfile_path("${TOP}/as","/req")
+#system("install -m 777 -d ${TOP}/as/save")
+#system("install -m 777 -d ${TOP}/as/req")
+makeAutosaveFiles()
