@@ -94,12 +94,12 @@ static long alarmSum(aSubRecord *prec){
 	while(vals[i]!=0){
 		if(keys[i]){
 			//prec->vala="ALARM";
-			*(prec->vala)=1;
+			*((long*)prec->vala)=1;
 		}
 		++i;
 	}
 	//rec->vala="NO_ALARM";
-	*(rec->vala)=0;
+	*((long*)prec->vala)=0;
 	
 	return 0;
 }
