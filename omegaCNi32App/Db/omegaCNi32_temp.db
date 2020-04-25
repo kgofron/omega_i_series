@@ -30,6 +30,8 @@ record(aSub, "$(Sys)$(Dev)T$(N_T)-Process"){
 
 	field(OUTA, "$(Sys)$(Dev)T$(N_T)-I PP")
 	field(FTVA, "DOUBLE")
+
+	field(FLNK, "$(Sys)$(Dev)T$(N_T)-RollCall")
 }
 
 record(aSub, "$(Sys)$(Dev)T$(N_T)-RollCall"){
@@ -47,6 +49,7 @@ record(aSub, "$(Sys)$(Dev)T$(N_T)-AlarmSum_asub"){
 }
 
 record(ao, "$(Sys)$(Dev)T$(N_T)-AlarmSum"){
+	field(SCAN, "10 second")
 }
 
 record(ai, "$(Sys)$(Dev)T$(N_T)-I")
