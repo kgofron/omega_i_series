@@ -43,7 +43,7 @@ record(aSub, "$(Sys)$(Dev)T$(N_T)-RollCall"){
 record(aSub, "$(Sys)$(Dev)T$(N_T)-AlarmSum_asub"){
 	field(SNAM, "alarmSum")
 	field(OUTA, "$(Sys)$(Dev)T$(N_T)-AlarmSum")
-	field(FTVA, "LONG")
+	field(FTVA, "DOUBLE")
 }
 
 record(ao, "$(Sys)$(Dev)T$(N_T)-AlarmSum"){
