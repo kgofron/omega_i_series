@@ -91,7 +91,7 @@ static long rollCall(aSubRecord *prec)
 
 static long alarmSum(aSubRecord *prec){
 	int i=0;
-	while(vals[i]!=0){
+	while(keys[i]!=0){
 		if(keys[i]){
 			//prec->vala="ALARM";
 			//printf("ALARM\n");
