@@ -58,7 +58,7 @@ int vals[256];
 
 static long rollCall(aSubRecord *prec)
 {
-	printf("STAT: %s %s\n", ((char*)prec->inpa.text),((char*)prec->a));
+	printf("STAT: %s %s\n", ((char*)prec->b),((char*)prec->a));
 	return 0;
 }
 
