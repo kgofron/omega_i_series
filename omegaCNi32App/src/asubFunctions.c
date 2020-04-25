@@ -57,7 +57,7 @@ static long filter(aSubRecord *prec)
 static long rollCall(aSubRecord *prec)
 {
 	printf("Roll call\n");
-	#printf("temp %lf\n",*((double*)prec->vala));
+	//printf("temp %lf\n",*((double*)prec->vala));
 	return 0;
 }
 
