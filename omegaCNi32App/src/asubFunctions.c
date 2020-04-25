@@ -96,6 +96,7 @@ static long alarmSum(aSubRecord *prec){
 			//prec->vala="ALARM";
 			printf("ALARM\n");
 			*((double*)prec->vala)=1.0;
+			return 0;
 		}
 		++i;
 	}
