@@ -53,9 +53,12 @@ static long filter(aSubRecord *prec)
     return 0;
 }
 
+char* keys[256];
+int vals[256];
+
 static long rollCall(aSubRecord *prec)
 {
-	printf("STAT: %s\n",((char*)prec->a));
+	printf("STAT: %s %s\n", ((char*)prec->inpa),((char*)prec->a));
 	return 0;
 }
 
