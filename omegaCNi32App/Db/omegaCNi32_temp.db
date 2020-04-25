@@ -31,7 +31,6 @@ record(aSub, "$(Sys)$(Dev)T$(N_T)-Process"){
 	field(OUTA, "$(Sys)$(Dev)T$(N_T)-I PP")
 	field(FTVA, "DOUBLE")
 
-	field(FLNK, "$(Sys)$(Dev)T$(N_T)-RollCall")
 }
 
 record(aSub, "$(Sys)$(Dev)T$(N_T)-RollCall"){
@@ -67,6 +66,7 @@ record(ai, "$(Sys)$(Dev)T$(N_T)-I")
    field(HSV,  "MINOR")
    field(LLSV, "MINOR")
    field(LSV,  "MINOR")
+   field(FLNK, "$(Sys)$(Dev)T$(N_T)-RollCall")
 
    info(autosaveFields, "LOLO LOW HIGH HIHI LLSV LSV HSV HHSV")
 }
