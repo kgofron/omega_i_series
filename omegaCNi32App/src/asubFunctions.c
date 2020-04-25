@@ -83,7 +83,7 @@ static long rollCall(aSubRecord *prec)
 	char* pv_name = ((char*)prec->b);
 	char* alarm_text = ((char*)prec->a);
 	int index;
-	printf("STAT: %s %s\n", ((char*)prec->b),((char*)prec->a));
+	//printf("STAT: %s %s\n", ((char*)prec->b),((char*)prec->a));
 	index = find_or_add_key(pv_name);
 	vals[index] = isAlarm(alarm_text);
 	return 0;
@@ -94,7 +94,7 @@ static long alarmSum(aSubRecord *prec){
 	while(vals[i]!=0){
 		if(keys[i]){
 			//prec->vala="ALARM";
-			printf("ALARM\n");
+			//printf("ALARM\n");
 			*((double*)prec->vala)=1.0;
 			return 0;
 		}
