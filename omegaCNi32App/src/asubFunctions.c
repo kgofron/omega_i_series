@@ -61,11 +61,12 @@ int vals[N_KEYS]={0};
 int find_or_add_key(char* pv_name){
 	int i=0;
 	for(i=0; i<N_KEYS; ++i){
-		if(!strcmp(keys[i], pv_name)){
+		if(keys[i]==0){
+			keys[i] = pv_name;
 			return i;
 		}
-		else if(keys[i]==0){
-			keys[i] = pv_name;
+		else if(!strcmp(keys[i], pv_name)){
+			return i;
 		}
 	}
 }
