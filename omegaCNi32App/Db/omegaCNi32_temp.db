@@ -46,10 +46,10 @@ record(aSub, "$(Sys)$(Dev)T$(N_T)-AlarmSum_asub"){
 	field(SNAM, "alarmSum")
 	field(OUTA, "$(Sys)$(Dev)T$(N_T)-AlarmSum PP")
 	field(FTVA, "DOUBLE")
+	field(SCAN, "10 second")
 }
 
 record(ao, "$(Sys)$(Dev)T$(N_T)-AlarmSum"){
-	field(SCAN, "10 second")
 }
 
 record(ai, "$(Sys)$(Dev)T$(N_T)-I")
