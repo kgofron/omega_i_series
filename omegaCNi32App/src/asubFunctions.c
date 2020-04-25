@@ -36,6 +36,7 @@ int isOutlier(double* data, double val){
 
 static long filter(aSubRecord *prec)
 {
+	printf("filter\n");
 	static double lastN[N] = { 0 };
 	static int count=0;
 	double raw = *((double*)prec->a);
@@ -55,7 +56,8 @@ static long filter(aSubRecord *prec)
 
 static long rollCall(aSubRecord *prec)
 {
-	printf("temp %lf\n",*((double*)prec->vala));
+	printf("Roll call\n");
+	#printf("temp %lf\n",*((double*)prec->vala));
 	return 0;
 }
 
