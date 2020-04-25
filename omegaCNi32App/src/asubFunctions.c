@@ -53,4 +53,11 @@ static long filter(aSubRecord *prec)
     return 0;
 }
 
+static void rollCall(aSubRecord *prec)
+{
+	printf("temp %lf\n",*((double*)prec->vala));
+	return;
+}
+
+
 epicsRegisterFunction(filter);

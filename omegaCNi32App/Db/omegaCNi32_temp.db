@@ -32,6 +32,14 @@ record(aSub, "$(Sys)$(Dev)T$(N_T)-Process"){
 	field(FTVA, "DOUBLE")
 }
 
+record(aSub, "$(Sys)$(Dev)T$(N_T)-RollCall"){
+	field(SNAM, "rollCall")
+	field(INPA, "$(Sys)$(Dev)T$(N_T)-I PP")
+	field(FTVA, "DOUBLE")
+
+
+}
+
 record(ai, "$(Sys)$(Dev)T$(N_T)-I")
 {
    field(DESC, "Process Temperature")
