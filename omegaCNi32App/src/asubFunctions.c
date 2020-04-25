@@ -63,3 +63,4 @@ static long rollCall(aSubRecord *prec)
 
 
 epicsRegisterFunction(filter);
+epicsRegisterFunction(rollCall);
