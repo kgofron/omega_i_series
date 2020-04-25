@@ -35,7 +35,7 @@ record(aSub, "$(Sys)$(Dev)T$(N_T)-Process"){
 record(aSub, "$(Sys)$(Dev)T$(N_T)-RollCall"){
 	field(SNAM, "rollCall")
 	field(INPA, "$(Sys)$(Dev)T$(N_T)-I.STAT")
-	field(FTVA, "LONG")
+	field(FTVA, "STRING")
 
 
 }
