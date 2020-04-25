@@ -94,6 +94,7 @@ static long alarmSum(aSubRecord *prec){
 	while(vals[i]!=0){
 		if(keys[i]){
 			//prec->vala="ALARM";
+			printf("ALARM\n");
 			*((long*)prec->vala)=1;
 		}
 		++i;
