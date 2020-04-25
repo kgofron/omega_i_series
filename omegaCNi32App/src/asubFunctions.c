@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include <registryFunction.h>
 #include <aSubRecord.h>
 #include <epicsExport.h>
@@ -53,12 +54,37 @@ static long filter(aSubRecord *prec)
     return 0;
 }
 
-char* keys[256];
-int vals[256];
+#define N_KEYS 256
+char* keys[N_KEYS]={0};
+int vals[N_KEYS]={0};
+
+int find_or_add_key(char* pv_name){
+	int i=0;
+	for(i=0; i<N_KEYS; ++i){
+		if(!strcmp(keys[i], pv_name)){
+			return i;
+		}
+		else if(keys[i]==0){
+			keys[i] = pv_name;
+		}
+	}
+}
+
+int isAlarm(char* alarm_text){
+	if(!strcmp(alarm_text, "NO_ALARM")){
+		return 0;
+	}
+	return 1;
+}
 
 static long rollCall(aSubRecord *prec)
 {
+	char* pv_name = ((char*)prec->b);
+	char* alarm_text = ((char*)prec->a);
+	int index;
 	printf("STAT: %s %s\n", ((char*)prec->b),((char*)prec->a));
+	index = find_or_add_key(pv_name);
+	vals[index] = isAlarm(pv_name);
 	return 0;
 }
 
