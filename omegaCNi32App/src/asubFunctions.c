@@ -85,7 +85,7 @@ static long rollCall(aSubRecord *prec)
 	int index;
 	printf("STAT: %s %s\n", ((char*)prec->b),((char*)prec->a));
 	index = find_or_add_key(pv_name);
-	vals[index] = isAlarm(pv_name);
+	vals[index] = isAlarm(alarm_text);
 	return 0;
 }
 
