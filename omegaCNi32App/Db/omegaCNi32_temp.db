@@ -38,8 +38,15 @@ record(aSub, "$(Sys)$(Dev)T$(N_T)-RollCall"){
 	field(INPB, "$(Sys)$(Dev)T$(N_T)-I.NAME")
 	field(FTA, "STRING")
 	field(FTB, "STRING")
+}
 
+record(aSub, "$(Sys)$(Dev)T$(N_T)-AlarmSum_asub"){
+	field(SNAM, "rollCall")
+	field(VALA, "$(Sys)$(Dev)T$(N_T)-AlarmSum.STAT")
+	field(FTVA, "STRING")
+}
 
+record(ao, "$(Sys)$(Dev)T$(N_T)-AlarmSum"){
 }
 
 record(ai, "$(Sys)$(Dev)T$(N_T)-I")

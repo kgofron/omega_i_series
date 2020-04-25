@@ -89,6 +89,20 @@ static long rollCall(aSubRecord *prec)
 	return 0;
 }
 
+static long alarmSum(aSubRecord *prec){
+	int i=0;
+	while(vals[i]!=0){
+		if(keys[i]){
+			prec->vala="ALARM";
+		}
+		++i;
+	}
+	prec->vala="NO_ALARM";
+	
+	return 0;
+}
+
 
 epicsRegisterFunction(filter);
 epicsRegisterFunction(rollCall);
+epicsRegisterFunction(alarmSum);
