@@ -1,3 +1,4 @@
+dbLoadRecords("db/alarm_summary.db","Sys=${Sys}")
 set_savefile_path("${TOP}/as","/save")
 set_requestfile_path("${TOP}/as","/req")
 set_pass1_restoreFile("info_settings.sav")

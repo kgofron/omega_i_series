@@ -1,0 +1,9 @@
+record(aSub, "$(Sys){Racks}T-AlarmSum_asub"){
+	field(SNAM, "alarmSum")
+	field(OUTA, "$(Sys){Racks}T-AlarmSum PP")
+	field(FTVA, "DOUBLE")
+	field(SCAN, "10 second")
+}
+
+record(ao, "$(Sys){Racks}T-AlarmSum"){
+}
