@@ -60,7 +60,7 @@ record(ai, "$(Sys)$(Dev)T$(N_T)-I")
    field(LSV,  "MINOR")
    field(FLNK, "$(Sys)$(Dev)T$(N_T)-RollCall")
 
-   info(autosaveFields, "LOLO LOW HIGH HIHI LLSV LSV HSV HHSV")
+   info(autosaveFields, "LOLO LOW HIGH HIHI LLSV LSV HSV HHSV HYST ADEL MDEL")
 }
 
 record(ai, "$(Sys)$(Dev)T$(N_T)-RB")
