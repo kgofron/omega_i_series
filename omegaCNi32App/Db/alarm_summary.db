@@ -7,3 +7,7 @@ record(aSub, "$(Sys){Racks}T-AlarmSum_asub"){
 
 record(ao, "$(Sys){Racks}T-AlarmSum"){
 }
+
+record(ao, "$(Sys){Racks}Version"){
+	field(VAL, "1.0")
+}
