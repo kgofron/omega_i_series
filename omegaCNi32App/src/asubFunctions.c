@@ -90,11 +90,12 @@ static long rollCall(aSubRecord *prec)
 	return 0;
 }
 
-static long upTime(aSubRecord *prec)
+static long timeElapsed(aSubRecord *prec)
 {
 	epicsTimeStamp t;
 	epicsTimeGetCurrent(&t);
-	printf("%d\n", t.secPastEpoch);
+	//printf("%d\n", t.secPastEpoch);
+	*((long*)prec->vala) = t.secPastEpoch - ((epicsTimeStamp*)prec->a)->secPastEpoch;
 	return 0;
 }
 
@@ -119,4 +120,4 @@ static long alarmSum(aSubRecord *prec){
 epicsRegisterFunction(filter);
 epicsRegisterFunction(rollCall);
 epicsRegisterFunction(alarmSum);
-epicsRegisterFunction(upTime);
+epicsRegisterFunction(timeElapsed);

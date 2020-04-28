@@ -70,8 +70,13 @@ record(stringin, "$(Sys)$(Dev)T-Time") {
   field(INP, "@%b %d %Y %H:%M:%S")
 }
 
-record(aSub, "$(Sys)$(Dev)T-UpTime_asub") {
-	field(SNAM, "upTime")
+record(aSub, "$(Sys)$(Dev)T-Elapsed_asub") {
+	field(SNAM, "timeElapsed")
+	field(INPA, "$(Sys)$(Dev)T$(N_T)-I.TIME")
+	field(FTA, "LONG")
+}
+
+record(ai, "$(Sys)$(Dev)T-Elapsed") {
 }
 
 record(ai, "$(Sys)$(Dev)T$(N_T)-RB")
