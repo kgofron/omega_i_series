@@ -76,7 +76,7 @@ record(aSub, "$(Sys)$(Dev)T$(N_T)-Elapsed_asub") {
 	field(INPA, "$(Sys)$(Dev)T$(N_T)-I.TIME")
 	field(OUTA, "$(Sys)$(Dev)T$(N_T)-Elapsed")
 	field(FTA, "LONG")
-	field(FTVA, "LONG")
+	field(FTVA, "DOUBLE")
 }
 
 record(ai, "$(Sys)$(Dev)T$(N_T)-Elapsed") {
