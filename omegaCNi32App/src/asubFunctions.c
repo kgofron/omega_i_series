@@ -90,7 +90,7 @@ static long rollCall(aSubRecord *prec)
 	return 0;
 }
 
-static long timeElapsed(aSubRecord *prec)
+static long timeElapsed1(aSubRecord *prec)
 {
 	epicsTimeStamp t;
 	epicsTimeGetCurrent(&t);
@@ -122,4 +122,4 @@ static long alarmSum(aSubRecord *prec){
 epicsRegisterFunction(filter);
 epicsRegisterFunction(rollCall);
 epicsRegisterFunction(alarmSum);
-epicsRegisterFunction(timeElapsed);
+epicsRegisterFunction(timeElapsed1);
