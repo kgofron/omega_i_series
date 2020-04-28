@@ -63,6 +63,13 @@ record(ai, "$(Sys)$(Dev)T$(N_T)-I")
    info(autosaveFields, "LOLO LOW HIGH HIHI LLSV LSV HSV HHSV HYST ADEL MDEL")
 }
 
+
+record(stringin, "$(Sys)$(Dev)T-Time") {
+  field(DTYP, "Soft Timestamp")
+  field(TSEL, "$(Sys)$(Dev)T$(N_T)-I.TIME CP")
+  field(INP, "@%b %d %Y %H:%M:%S")
+}
+
 record(ai, "$(Sys)$(Dev)T$(N_T)-RB")
 {
    field(DTYP, "stream")
