@@ -97,7 +97,7 @@ static long timeElapsed(aSubRecord *prec)
 	long t_diff = t.secPastEpoch - ((epicsTimeStamp*)prec->a)->secPastEpoch;
 	printf("here\n");
 	printf("%d\n", t_diff);
-	*((double*)prec->vala) = t_diff;
+	//*((double*)prec->vala) = t_diff;
 	return 0;
 }
 
