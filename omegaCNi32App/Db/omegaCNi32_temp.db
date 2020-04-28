@@ -70,7 +70,7 @@ record(stringin, "$(Sys)$(Dev)T-Time") {
   field(INP, "@%b %d %Y %H:%M:%S")
 }
 
-record(asub, "$(Sys)$(Dev)T-UpTime_asub") {
+record(aSub, "$(Sys)$(Dev)T-UpTime_asub") {
 	field(SNAM, "upTime")
 }
 
