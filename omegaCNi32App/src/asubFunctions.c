@@ -4,6 +4,7 @@
 #include <registryFunction.h>
 #include <aSubRecord.h>
 #include <epicsExport.h>
+#include <epicsTime.h>
 
 #define N 5
 #define FILTERING_ON 0
@@ -89,6 +90,14 @@ static long rollCall(aSubRecord *prec)
 	return 0;
 }
 
+static long upTime(aSubRecord *prec)
+{
+	epicsTimeStamp t;
+	epicsTimeGetCurrent(&t);
+	printf("%d\n", t.secPastEpoch);
+	return 0;
+}
+
 static long alarmSum(aSubRecord *prec){
 	int i=0;
 	while(keys[i]!=0){
@@ -110,3 +119,4 @@ static long alarmSum(aSubRecord *prec){
 epicsRegisterFunction(filter);
 epicsRegisterFunction(rollCall);
 epicsRegisterFunction(alarmSum);
+epicsRegisterFunction(upTime);
