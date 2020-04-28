@@ -65,19 +65,21 @@ record(ai, "$(Sys)$(Dev)T$(N_T)-I")
 }
 
 
-record(stringin, "$(Sys)$(Dev)T-Time") {
+record(stringin, "$(Sys)$(Dev)T$(N_T)-Time") {
   field(DTYP, "Soft Timestamp")
   field(TSEL, "$(Sys)$(Dev)T$(N_T)-I.TIME CP")
   field(INP, "@%b %d %Y %H:%M:%S")
 }
 
-record(aSub, "$(Sys)$(Dev)T-Elapsed_asub") {
+record(aSub, "$(Sys)$(Dev)T$(N_T)-Elapsed_asub") {
 	field(SNAM, "timeElapsed")
 	field(INPA, "$(Sys)$(Dev)T$(N_T)-I.TIME")
+	field(OUTA, "$(Sys)$(Dev)T$(N_T)-Elapsed")
 	field(FTA, "LONG")
+	field(FTVA, "LONG")
 }
 
-record(ai, "$(Sys)$(Dev)T-Elapsed") {
+record(ai, "$(Sys)$(Dev)T$(N_T)-Elapsed") {
 }
 
 record(ai, "$(Sys)$(Dev)T$(N_T)-RB")
