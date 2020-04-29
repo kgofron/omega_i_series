@@ -32,7 +32,7 @@ record(aSub, "$(Sys)$(Dev)T$(N_T)-Process"){
 	#field(INPB, "$(Sys)$(Dev)T$(N_T)-Elapsed")
 	#field(FTB, "DOUBLE")
 
-	field(OUTA, "$(Sys)$(Dev)T$(N_T)-I PP MS")
+	field(OUTA, "$(Sys)$(Dev)T$(N_T)-I PP")
 	field(FTVA, "DOUBLE")
 
 }

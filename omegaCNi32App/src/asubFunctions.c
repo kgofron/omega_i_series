@@ -100,6 +100,8 @@ static long timeElapsed(aSubRecord *prec)
 {
 	epicsTimeStamp t;
 	epicsTimeGetCurrent(&t);
+	double prev_temp = *((double*)prec->b);
+	*((double*)prec->valb) = prev_temp;
 	long t_diff = t.secPastEpoch - *((double*)prec->a);
 	//printf("here\n");
 	//printf("%d\n", t.secPastEpoch);
@@ -107,10 +109,8 @@ static long timeElapsed(aSubRecord *prec)
 	//prec->stat = "COMM1";
 	//*((epicsEnum16*)prec->valb) = UDF_ALARM;
 	if(t_diff>10){
-		double prev_temp = *((double*)prec->b);
 		//prec->val = prev_temp;
-		//recGblSetSevr(prec,READ_ALARM,MAJOR_ALARM);
-		//*((double*)prec->valb) = prev_temp;
+		recGblSetSevr(prec,READ_ALARM,MAJOR_ALARM);
 	}
 
 	return 0;
