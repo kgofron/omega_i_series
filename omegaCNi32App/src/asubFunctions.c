@@ -100,8 +100,8 @@ static long timeElapsed(aSubRecord *prec)
 {
 	epicsTimeStamp t;
 	epicsTimeGetCurrent(&t);
-	double prev_temp = *((double*)prec->b);
-	*((double*)prec->valb) = prev_temp;
+	//double prev_temp = *((double*)prec->b);
+	//*((double*)prec->valb) = prev_temp;
 	long t_diff = t.secPastEpoch - *((double*)prec->a);
 	//printf("here\n");
 	//printf("%d\n", t.secPastEpoch);
