@@ -43,10 +43,6 @@ static long filter(aSubRecord *prec)
 	static double lastN[N] = { 0 };
 	static int count=0;
 	double raw = *((double*)prec->a);
-	//double elapsed_time = *((double*)prec->b);
-	//if(elapsed_time > 10){
-	//	recGblSetSevr(prec,READ_ALARM,MAJOR_ALARM);
-	//}
 	if(!FILTERING_ON){
 		*((double*)prec->vala) = raw;
 	}
@@ -90,7 +86,6 @@ static long rollCall(aSubRecord *prec)
 	char* pv_name = ((char*)prec->b);
 	char* alarm_text = ((char*)prec->a);
 	int index;
-	//printf("STAT: %s %s\n", ((char*)prec->b),((char*)prec->a));
 	index = find_or_add_key(pv_name);
 	vals[index] = isAlarm(alarm_text);
 	return 0;
@@ -100,16 +95,9 @@ static long timeElapsed(aSubRecord *prec)
 {
 	epicsTimeStamp t;
 	epicsTimeGetCurrent(&t);
-	//double prev_temp = *((double*)prec->b);
-	//*((double*)prec->valb) = prev_temp;
 	long t_diff = t.secPastEpoch - *((double*)prec->a);
-	//printf("here\n");
-	//printf("%d\n", t.secPastEpoch);
 	*((double*)prec->vala) = t_diff;
-	//prec->stat = "COMM1";
-	//*((epicsEnum16*)prec->valb) = UDF_ALARM;
 	if(t_diff>10){
-		//prec->val = prev_temp;
 		recGblSetSevr(prec,READ_ALARM,MAJOR_ALARM);
 	}
 
@@ -120,14 +108,11 @@ static long alarmSum(aSubRecord *prec){
 	int i=0;
 	while(keys[i]!=0){
 		if(vals[i]){
-			//prec->vala="ALARM";
-			//printf("ALARM\n");
 			*((double*)prec->vala)=1.0;
 			return 0;
 		}
 		++i;
 	}
-	//rec->vala="NO_ALARM";
 	*((double*)prec->vala)=0.0;
 	
 	return 0;
