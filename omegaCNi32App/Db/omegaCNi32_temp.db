@@ -83,8 +83,9 @@ record(aSub, "$(Sys)$(Dev)T$(N_T)-Elapsed_asub") {
 	field(SNAM, "timeElapsed")
 	field(INPA, "$(Sys)$(Dev)T$(N_T)-Time")
 	field(OUTA, "$(Sys)$(Dev)T$(N_T)-Elapsed PP")
-	#field(INPB, "$(Sys)$(Dev)T$(N_T)-I")
+	field(INPC, "$(Sys)$(Dev)T$(N_T)-NumTimeouts")
 	field(OUTB, "$(Sys)$(Dev)T$(N_T)-I NPP MS")
+	field(OUTC, "$(Sys)$(Dev)T$(N_T)-NumTimeouts PP")
 	field(FTA, "DOUBLE")
 	#field(FTB, "DOUBLE")
 	field(FTVA, "DOUBLE")
@@ -93,6 +94,9 @@ record(aSub, "$(Sys)$(Dev)T$(N_T)-Elapsed_asub") {
 }
 
 record(ai, "$(Sys)$(Dev)T$(N_T)-Elapsed") {
+}
+
+record(ai, "$(Sys)$(Dev)T$(N_T)-NumTimeouts") {
 }
 
 record(ai, "$(Sys)$(Dev)T$(N_T)-RB")
