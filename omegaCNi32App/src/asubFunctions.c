@@ -44,12 +44,12 @@ static long filter(aSubRecord *prec)
 	double raw = *((double*)prec->a);
 	long enable_filter = *((double*)prec->b);
 	if(!enable_filter){
+		printf("not filtering...\n");
 		*((double*)prec->vala) = raw;
 	}
 	else if(!isOutlier(lastN,raw)){
 		*((double*)prec->vala) = raw;
 	}
-	printf("filtering...\n");
 	if(raw==0.0)
 		return;
 	lastN[count] = raw;
