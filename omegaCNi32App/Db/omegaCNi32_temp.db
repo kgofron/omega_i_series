@@ -121,6 +121,7 @@ record(ao, "$(Sys)$(Dev)T$(N_T)-SP")
 	field(ESLO, "0.1")
 	field(PREC, "1")
 	field(PINI, "YES")
+	field(VAL, "20")
 
 	info(autosaveFields, "VAL")
 }
