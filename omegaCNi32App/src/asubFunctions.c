@@ -9,7 +9,6 @@
 #include <recGbl.h>
 
 #define N 5
-#define FILTERING_ON 0
 
 static int compare (const void * a, const void * b)
 {
@@ -43,18 +42,20 @@ static long filter(aSubRecord *prec)
 	static double lastN[N] = { 0 };
 	static int count=0;
 	double raw = *((double*)prec->a);
-	if(!FILTERING_ON){
+	long enable_filter = *((double*)prec->b);
+	if(!enable_filter){
 		*((double*)prec->vala) = raw;
 	}
 	else if(!isOutlier(lastN,raw)){
 		*((double*)prec->vala) = raw;
 	}
+	printf("filtering...\n");
 	if(raw==0.0)
 		return;
 	lastN[count] = raw;
 	count++;
 	count = count % N;
-    return 0;
+	return 0;
 }
 
 #define N_KEYS 256
