@@ -108,7 +108,7 @@ static long timeElapsed(aSubRecord *prec)
 	//*((epicsEnum16*)prec->valb) = UDF_ALARM;
 	if(t_diff>10){
 		double prev_temp = *((double*)prec->b);
-		prev->val = prev_temp;
+		((double*)prev->val) = prev_temp;
 		recGblSetSevr(prec,READ_ALARM,MAJOR_ALARM);
 		//*((double*)prec->valb) = prev_temp;
 	}
