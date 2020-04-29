@@ -101,8 +101,8 @@ static long timeElapsed(aSubRecord *prec)
 	//printf("%d\n", t.secPastEpoch);
 	*((double*)prec->vala) = t_diff;
 	//prec->stat = "COMM1";
-	//prec->nsta = "COMM1";
-	recGblSetSevr(prec,UDF_ALARM,READ_ALARM);
+	*((long*)prec->valb) = UDF_ALARM;
+	//recGblSetSevr(prec,UDF_ALARM,READ_ALARM);
 
 	return 0;
 }
