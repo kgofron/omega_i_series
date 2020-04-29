@@ -43,10 +43,10 @@ static long filter(aSubRecord *prec)
 	static double lastN[N] = { 0 };
 	static int count=0;
 	double raw = *((double*)prec->a);
-	double elapsed_time = *((double*)prec->b);
-	if(elapsed_time > 10){
-		recGblSetSevr(prec,READ_ALARM,MAJOR_ALARM);
-	}
+	//double elapsed_time = *((double*)prec->b);
+	//if(elapsed_time > 10){
+	//	recGblSetSevr(prec,READ_ALARM,MAJOR_ALARM);
+	//}
 	if(!FILTERING_ON){
 		*((double*)prec->vala) = raw;
 	}
@@ -106,9 +106,11 @@ static long timeElapsed(aSubRecord *prec)
 	*((double*)prec->vala) = t_diff;
 	//prec->stat = "COMM1";
 	//*((epicsEnum16*)prec->valb) = UDF_ALARM;
-	//if(t_diff>10){
-	//	recGblSetSevr(prec,READ_ALARM,MAJOR_ALARM);
-	//}
+	if(t_diff>10){
+		recGblSetSevr(prec,READ_ALARM,MAJOR_ALARM);
+		double prev_temp = *((double*)prec->b);
+		*((double*)prec->valb) = prev_temp;
+	}
 
 	return 0;
 }

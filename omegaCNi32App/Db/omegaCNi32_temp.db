@@ -29,8 +29,8 @@ record(aSub, "$(Sys)$(Dev)T$(N_T)-Process"){
 	field(FTA, "DOUBLE")
 
 
-	field(INPB, "$(Sys)$(Dev)T$(N_T)-Elapsed")
-	field(FTB, "DOUBLE")
+	#field(INPB, "$(Sys)$(Dev)T$(N_T)-Elapsed")
+	#field(FTB, "DOUBLE")
 
 	field(OUTA, "$(Sys)$(Dev)T$(N_T)-I PP MS")
 	field(FTVA, "DOUBLE")
@@ -78,8 +78,12 @@ record(aSub, "$(Sys)$(Dev)T$(N_T)-Elapsed_asub") {
 	field(SNAM, "timeElapsed")
 	field(INPA, "$(Sys)$(Dev)T$(N_T)-Time")
 	field(OUTA, "$(Sys)$(Dev)T$(N_T)-Elapsed PP")
+	field(INPB, "$(Sys)$(Dev)T$(N_T)-I")
+	field(OUTB, "$(Sys)$(Dev)T$(N_T)-I PP MS")
 	field(FTA, "DOUBLE")
+	field(FTB, "DOUBLE")
 	field(FTVA, "DOUBLE")
+	field(FTVB, "DOUBLE")
 	field(SCAN, "5 second")
 }
 
