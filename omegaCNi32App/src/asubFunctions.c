@@ -102,7 +102,7 @@ static long timeElapsed(aSubRecord *prec)
 	*((double*)prec->vala) = t_diff;
 	//prec->stat = "COMM1";
 	//*((epicsEnum16*)prec->valb) = UDF_ALARM;
-	recGblSetSevr(prec,UDF_ALARM,READ_ALARM);
+	recGblSetSevr(prec,READ_ALARM,MAJOR_ALARM);
 
 	return 0;
 }
