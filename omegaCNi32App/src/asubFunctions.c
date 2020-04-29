@@ -98,8 +98,8 @@ static long timeElapsed(aSubRecord *prec)
 	epicsTimeGetCurrent(&t);
 	long t_diff = t.secPastEpoch - *((double*)prec->a);
 	*((double*)prec->vala) = t_diff;
-	if(t_diff>10){
-		recGblSetSevr(prec,READ_ALARM,MAJOR_ALARM);
+	if(t_diff>3600){
+		recGblSetSevr(prec,READ_ALARM,INVALID_ALARM);
 	}
 
 	return 0;
