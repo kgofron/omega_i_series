@@ -29,7 +29,7 @@ record(aSub, "$(Sys)$(Dev)T$(N_T)-Process"){
 	field(FTA, "DOUBLE")
 
 
-	field(INPB, "$(Sys)$(Dev)T$(N_T)-EnableFilter")
+	field(INPB, "$(Sys)$(Dev)T$(N_T)-EnableFilter.RVAL")
 	field(FTB, "LONG")
 
 	field(OUTA, "$(Sys)$(Dev)T$(N_T)-I PP")
