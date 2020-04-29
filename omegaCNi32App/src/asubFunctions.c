@@ -49,8 +49,9 @@ static long filter(aSubRecord *prec)
 	else if(!isOutlier(lastN,raw)){
 		*((double*)prec->vala) = raw;
 	}
-	if(raw==0.0)
+	if(enable_filter && (raw==0.0 || raw==1.0 || raw==2.0)){
 		return;
+	}
 	lastN[count] = raw;
 	count++;
 	count = count % N;
