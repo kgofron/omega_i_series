@@ -1,24 +1,24 @@
 record(ai, "$(Sys)$(Dev)T$(N_T)-Raw:I")
 {
-   field(DTYP, "stream")
-   field(DESC, "Process Temperature")
-   field(INP, "@omega-CNi32.proto ReadX($(Chan),01) $(PORT)")
-   field(EGU,  "Celsius")
-   field(SCAN, "$(PERIOD=10) second")
-   field(HIHI, "35")
-   field(HIGH, "30")
-   field(LOLO, "10")
-   field(LOW,  "15")
-   field(HOPR, "35")
-   field(LOPR, "15")
-   field(PREC, "1")
-   field(HHSV, "MAJOR")
-   field(HSV,  "MINOR")
-   field(LLSV, "MINOR")
-   field(LSV,  "MINOR")
-   field(FLNK, "$(Sys)$(Dev)T$(N_T)-Process")
+	field(DTYP, "stream")
+	field(DESC, "Process Temperature")
+	field(INP, "@omega-CNi32.proto ReadX($(Chan),01) $(PORT)")
+	field(EGU,  "Celsius")
+	field(SCAN, "$(PERIOD=10) second")
+	field(HIHI, "35")
+	field(HIGH, "30")
+	field(LOLO, "10")
+	field(LOW,  "15")
+	field(HOPR, "35")
+	field(LOPR, "15")
+	field(PREC, "1")
+	field(HHSV, "MAJOR")
+	field(HSV,  "MINOR")
+	field(LLSV, "MINOR")
+	field(LSV,  "MINOR")
+	field(FLNK, "$(Sys)$(Dev)T$(N_T)-Process")
 
-   info(autosaveFields, "LOLO LOW HIGH HIHI LLSV LSV HSV HHSV")
+	info(autosaveFields, "LOLO LOW HIGH HIHI LLSV LSV HSV HHSV")
 }
 
 
@@ -38,6 +38,7 @@ record(aSub, "$(Sys)$(Dev)T$(N_T)-Process"){
 }
 
 record(bo, "$(Sys)$(Dev)T$(N_T)-EnableFilter"){
+	info(autosaveFields, "RVAL")
 }
 
 
@@ -53,29 +54,29 @@ record(aSub, "$(Sys)$(Dev)T$(N_T)-RollCall"){
 
 record(ai, "$(Sys)$(Dev)T$(N_T)-I")
 {
-   field(DESC, "Process Temperature")
-   field(EGU,  "Celsius")
-   field(HIHI, "35")
-   field(HIGH, "30")
-   field(LOLO, "10")
-   field(LOW,  "15")
-   field(HOPR, "35")
-   field(LOPR, "15")
-   field(PREC, "1")
-   field(HHSV, "MAJOR")
-   field(HSV,  "MINOR")
-   field(LLSV, "MINOR")
-   field(LSV,  "MINOR")
-   field(FLNK, "$(Sys)$(Dev)T$(N_T)-RollCall")
+	field(DESC, "Process Temperature")
+	field(EGU,  "Celsius")
+	field(HIHI, "35")
+	field(HIGH, "30")
+	field(LOLO, "10")
+	field(LOW,  "15")
+	field(HOPR, "35")
+	field(LOPR, "15")
+	field(PREC, "1")
+	field(HHSV, "MAJOR")
+	field(HSV,  "MINOR")
+	field(LLSV, "MINOR")
+	field(LSV,  "MINOR")
+	field(FLNK, "$(Sys)$(Dev)T$(N_T)-RollCall")
 
-   info(autosaveFields, "LOLO LOW HIGH HIHI LLSV LSV HSV HHSV HYST ADEL MDEL")
+	info(autosaveFields, "LOLO LOW HIGH HIHI LLSV LSV HSV HHSV HYST ADEL MDEL")
 }
 
 
 record(ai, "$(Sys)$(Dev)T$(N_T)-Time") {
-  field(DTYP, "Soft Timestamp")
-  field(TSEL, "$(Sys)$(Dev)T$(N_T)-Raw:I.TIME CP")
-  #field(INP, "@%b %d %Y %H:%M:%S")
+	field(DTYP, "Soft Timestamp")
+	field(TSEL, "$(Sys)$(Dev)T$(N_T)-Raw:I.TIME CP")
+	field(INP, "@%b %d %Y %H:%M:%S")
 }
 
 record(aSub, "$(Sys)$(Dev)T$(N_T)-Elapsed_asub") {
@@ -96,92 +97,92 @@ record(ai, "$(Sys)$(Dev)T$(N_T)-Elapsed") {
 
 record(ai, "$(Sys)$(Dev)T$(N_T)-RB")
 {
-   field(DTYP, "stream")
-   field(DESC, "Setpoint Temperature Readback")
-   field(INP, "@omega-CNi32.proto ReadSP($(Chan),01) $(PORT)")
-   field(EGU,  "Celsius")
-   field(LINR, "SLOPE")
-   field(ESLO, "0.1")
-   field(PREC, "1")
-   field(SCAN, "10 second")
+	field(DTYP, "stream")
+	field(DESC, "Setpoint Temperature Readback")
+	field(INP, "@omega-CNi32.proto ReadSP($(Chan),01) $(PORT)")
+	field(EGU,  "Celsius")
+	field(LINR, "SLOPE")
+	field(ESLO, "0.1")
+	field(PREC, "1")
+	field(SCAN, "10 second")
 }
 
 record(ao, "$(Sys)$(Dev)T$(N_T)-SP")
 {
-   field(DTYP, "stream")
-   field(DESC, "Setpoint Temperature")
-   field(OUT, "@omega-CNi32.proto WriteSP($(Chan),01) $(PORT)")
-   field(EGU,  "Celsius")
-   field(LINR, "SLOPE")
-   field(ESLO, "0.1")
-   field(PREC, "1")
-   field(PINI, "YES")
+	field(DTYP, "stream")
+	field(DESC, "Setpoint Temperature")
+	field(OUT, "@omega-CNi32.proto WriteSP($(Chan),01) $(PORT)")
+	field(EGU,  "Celsius")
+	field(LINR, "SLOPE")
+	field(ESLO, "0.1")
+	field(PREC, "1")
+	field(PINI, "YES")
 
-   info(autosaveFields, "VAL")
+	info(autosaveFields, "VAL")
 }
 
 record(ai, "$(Sys)$(Dev)Gain:PB$(N_GAIN)-RB")
 {
-   field(DTYP, "stream")
-   field(DESC, "Proportional Band 1")
-   field(INP, "@omega-CNi32.proto ReadPID($(Chan),17) $(PORT)")
-   field(EGU,  "Counts")
-   field(PREC, "1")
-   field(SCAN, "10 second")
+	field(DTYP, "stream")
+	field(DESC, "Proportional Band 1")
+	field(INP, "@omega-CNi32.proto ReadPID($(Chan),17) $(PORT)")
+	field(EGU,  "Counts")
+	field(PREC, "1")
+	field(SCAN, "10 second")
 }
 
 record(ai, "$(Sys)$(Dev)Gain:I$(N_GAIN)-RB")
 {
-   field(DTYP, "stream")
-   field(DESC, "Reset 1")
-   field(INP, "@omega-CNi32.proto ReadPID($(Chan),18) $(PORT)")
-   field(EGU,  "Seconds")
-   field(PREC, "1")
-   field(SCAN, "10 second")
+	field(DTYP, "stream")
+	field(DESC, "Reset 1")
+	field(INP, "@omega-CNi32.proto ReadPID($(Chan),18) $(PORT)")
+	field(EGU,  "Seconds")
+	field(PREC, "1")
+	field(SCAN, "10 second")
 }
 
 record(ai, "$(Sys)$(Dev)Gain:D$(N_GAIN)-RB")
 {
-   field(DTYP, "stream")
-   field(DESC, "Rate 1")
-   field(INP, "@omega-CNi32.proto ReadPID($(Chan),19) $(PORT)")
-   field(EGU,  "Seconds")
-   field(PREC, "1")
-   field(SCAN, "10 second")
+	field(DTYP, "stream")
+	field(DESC, "Rate 1")
+	field(INP, "@omega-CNi32.proto ReadPID($(Chan),19) $(PORT)")
+	field(EGU,  "Seconds")
+	field(PREC, "1")
+	field(SCAN, "10 second")
 }
 
 record(ao, "$(Sys)$(Dev)Gain:PB$(N_GAIN)-SP")
 {
-   field(DTYP, "stream")
-   field(DESC, "Proportional Band 1")
-   field(OUT, "@omega-CNi32.proto WritePID($(Chan),17) $(PORT)")
-   field(EGU,  "Counts")
-   field(PREC, "1")
-   field(PINI, "YES")
+	field(DTYP, "stream")
+	field(DESC, "Proportional Band 1")
+	field(OUT, "@omega-CNi32.proto WritePID($(Chan),17) $(PORT)")
+	field(EGU,  "Counts")
+	field(PREC, "1")
+	field(PINI, "YES")
 
-   info(autosaveFields_pass0, "VAL")
+	info(autosaveFields_pass0, "VAL")
 }
 
 record(ao, "$(Sys)$(Dev)Gain:I$(N_GAIN)-SP")
 {
-   field(DTYP, "stream")
-   field(DESC, "Rate 1")
-   field(OUT, "@omega-CNi32.proto WritePID($(Chan),18) $(PORT)")
-   field(EGU,  "Counts")
-   field(PREC, "1")
-   field(PINI, "YES")
+	field(DTYP, "stream")
+	field(DESC, "Rate 1")
+	field(OUT, "@omega-CNi32.proto WritePID($(Chan),18) $(PORT)")
+	field(EGU,  "Counts")
+	field(PREC, "1")
+	field(PINI, "YES")
 
-   info(autosaveFields_pass0, "VAL")
+	info(autosaveFields_pass0, "VAL")
 }
 
 record(ao, "$(Sys)$(Dev)Gain:D$(N_GAIN)-SP")
 {
-   field(DTYP, "stream")
-   field(DESC, "Reset 1")
-   field(OUT, "@omega-CNi32.proto WritePID($(Chan),19) $(PORT)")
-   field(EGU,  "Counts")
-   field(PREC, "1")
-   field(PINI, "YES")
+	field(DTYP, "stream")
+	field(DESC, "Reset 1")
+	field(OUT, "@omega-CNi32.proto WritePID($(Chan),19) $(PORT)")
+	field(EGU,  "Counts")
+	field(PREC, "1")
+	field(PINI, "YES")
 
-   info(autosaveFields_pass0, "VAL")
+	info(autosaveFields_pass0, "VAL")
 }
