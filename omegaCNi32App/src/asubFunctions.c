@@ -43,6 +43,10 @@ static long filter(aSubRecord *prec)
 	static double lastN[N] = { 0 };
 	static int count=0;
 	double raw = *((double*)prec->a);
+	double elapsed_time = *((double*)prec->b);
+	if(elapsed_time > 50){
+		recGblSetSevr(prec,READ_ALARM,MAJOR_ALARM);
+	}
 	if(!FILTERING_ON){
 		*((double*)prec->vala) = raw;
 	}
