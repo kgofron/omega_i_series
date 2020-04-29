@@ -44,7 +44,7 @@ static long filter(aSubRecord *prec)
 	static int count=0;
 	double raw = *((double*)prec->a);
 	double elapsed_time = *((double*)prec->b);
-	if(elapsed_time > 50){
+	if(elapsed_time > 10){
 		recGblSetSevr(prec,READ_ALARM,MAJOR_ALARM);
 	}
 	if(!FILTERING_ON){
