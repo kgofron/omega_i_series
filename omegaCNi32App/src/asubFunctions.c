@@ -5,6 +5,8 @@
 #include <aSubRecord.h>
 #include <epicsExport.h>
 #include <epicsTime.h>
+#include <alarm.h>
+#include <recGbl.h>
 
 #define N 5
 #define FILTERING_ON 0
@@ -98,8 +100,10 @@ static long timeElapsed(aSubRecord *prec)
 	//printf("here\n");
 	//printf("%d\n", t.secPastEpoch);
 	*((double*)prec->vala) = t_diff;
-	prec->stat = "COMM1";
-	prec->nsta = "COMM1";
+	//prec->stat = "COMM1";
+	//prec->nsta = "COMM1";
+	recGblSetSevr(prec,UDF_ALARM,READ_ALARM);
+
 	return 0;
 }
 
