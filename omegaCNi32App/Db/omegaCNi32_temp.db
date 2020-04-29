@@ -70,7 +70,7 @@ record(ai, "$(Sys)$(Dev)T$(N_T)-I")
 
 record(ai, "$(Sys)$(Dev)T$(N_T)-Time") {
   field(DTYP, "Soft Timestamp")
-  field(TSEL, "$(Sys)$(Dev)T$(N_T)-I.TIME CP")
+  field(TSEL, "$(Sys)$(Dev)T$(N_T)-Raw:I.TIME CP")
   #field(INP, "@%b %d %Y %H:%M:%S")
 }
 
