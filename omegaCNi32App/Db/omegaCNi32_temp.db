@@ -77,7 +77,6 @@ record(aSub, "$(Sys)$(Dev)T$(N_T)-Elapsed_asub") {
 	field(FLNK, "$(Sys)$(Dev)T$(N_T)-I MS")
 	field(FTA, "DOUBLE")
 	field(FTVA, "DOUBLE")
-	field(FTVB, "ENUM")
 	field(SCAN, "5 second")
 }
 
