@@ -98,8 +98,8 @@ static long timeElapsed(aSubRecord *prec)
 	//printf("here\n");
 	//printf("%d\n", t.secPastEpoch);
 	*((double*)prec->vala) = t_diff;
-	prec->stat = "COMM";
-	prec->nsta = "COMM";
+	prec->stat = "COMM1";
+	prec->nsta = "COMM1";
 	return 0;
 }
 
