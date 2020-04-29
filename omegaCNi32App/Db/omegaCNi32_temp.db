@@ -74,8 +74,10 @@ record(aSub, "$(Sys)$(Dev)T$(N_T)-Elapsed_asub") {
 	field(SNAM, "timeElapsed")
 	field(INPA, "$(Sys)$(Dev)T$(N_T)-Time")
 	field(OUTA, "$(Sys)$(Dev)T$(N_T)-Elapsed PP")
+	field(OUTB, "$(Sys)$(Dev)T$(N_T)-I.STAT")
 	field(FTA, "DOUBLE")
 	field(FTVA, "DOUBLE")
+	field(FTVB, "STRING")
 	field(SCAN, "5 second")
 }
 
