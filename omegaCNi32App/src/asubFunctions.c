@@ -42,7 +42,7 @@ static long filter(aSubRecord *prec)
 	static double lastN[N] = { 0 };
 	static int count=0;
 	double raw = *((double*)prec->a);
-	long enable_filter = *((double*)prec->b);
+	long enable_filter = *((long*)prec->b);
 	if(!enable_filter){
 		printf("not filtering...\n");
 		*((double*)prec->vala) = raw;
