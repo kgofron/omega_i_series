@@ -1,6 +1,7 @@
 dbLoadRecords("db/alarm_summary.db","Sys=${Sys}")
-set_savefile_path("${TOP}/as","/save")
-set_requestfile_path("${TOP}/as","/req")
+epicEnvSet("AS", "${TOP}/../as")
+set_savefile_path("${AS}","/save")
+set_requestfile_path("${AS}","/req")
 set_pass0_restoreFile("info_positions.sav")
 set_pass1_restoreFile("info_settings.sav")
 iocInit()
@@ -9,7 +10,7 @@ iocInit()
 dbl > ${TOP}/records.dbl
 system "cp ${TOP}/records.dbl /cf-update/$HOSTNAME.$IOCNAME.dbl"
 #makeAutosaveFiles()
-makeAutosaveFileFromDbInfo("as/req/info_settings.req", "autosaveFields");
-makeAutosaveFileFromDbInfo("as/req/info_positions.req", "autosaveFields_pass0");
+makeAutosaveFileFromDbInfo("${AS}/req/info_settings.req", "autosaveFields");
+makeAutosaveFileFromDbInfo("${AS}/req/info_positions.req", "autosaveFields_pass0");
 create_monitor_set("info_positions.req",30)
 create_monitor_set("info_settings.req",30)
