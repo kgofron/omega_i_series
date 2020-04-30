@@ -96,6 +96,8 @@ static long timeElapsed(aSubRecord *prec)
 {
 	epicsTimeStamp t;
 	epicsTimeGetCurrent(&t);
+	double temp_prev = *((double*)prec->b);
+	*((double*)prec->valb) = temp_prev;
 	long t_diff = t.secPastEpoch - *((double*)prec->a);
 	*((double*)prec->vala) = t_diff;
 	if(t_diff>900){
