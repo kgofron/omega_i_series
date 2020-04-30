@@ -76,7 +76,7 @@ int find_or_add_key(char* pv_name){
 }
 
 int isAlarm(char* alarm_text){
-	if(!strcmp(alarm_text, "NO_ALARM")){
+	if(!strcmp(alarm_text, "MAJOR")){
 		return 0;
 	}
 	return 1;

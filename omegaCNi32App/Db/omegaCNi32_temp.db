@@ -44,7 +44,7 @@ record(bo, "$(Sys)$(Dev)T$(N_T)-EnableFilter"){
 
 record(aSub, "$(Sys)$(Dev)T$(N_T)-RollCall"){
 	field(SNAM, "rollCall")
-	field(INPA, "$(Sys)$(Dev)T$(N_T)-I.STAT")
+	field(INPA, "$(Sys)$(Dev)T$(N_T)-I.SEVR")
 	field(INPB, "$(Sys)$(Dev)T$(N_T)-I.NAME")
 	field(FTA, "STRING")
 	field(FTB, "STRING")
@@ -98,6 +98,7 @@ record(ai, "$(Sys)$(Dev)T$(N_T)-Elapsed") {
 }
 
 record(ai, "$(Sys)$(Dev)T$(N_T)-NumTimeouts") {
+	info(autosaveFields, "VAL")
 }
 
 record(ai, "$(Sys)$(Dev)T$(N_T)-RB")
