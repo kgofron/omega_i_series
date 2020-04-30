@@ -1,5 +1,5 @@
 dbLoadRecords("db/alarm_summary.db","Sys=${Sys}")
-epicEnvSet("AS", "${TOP}/../as")
+epicsEnvSet("AS", "${TOP}/../as")
 set_savefile_path("${AS}","/save")
 set_requestfile_path("${AS}","/req")
 set_pass0_restoreFile("info_positions.sav")
