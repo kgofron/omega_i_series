@@ -111,7 +111,7 @@ record(ai, "$(Sys)$(Dev)T$(N_T)-RB")
 	field(SCAN, "10 second")
 }
 
-record(longout, "$(Sys)$(Dev)T$(N_T)-SP")
+record(ao, "$(Sys)$(Dev)T$(N_T)-SP")
 {
 	field(DTYP, "stream")
 	field(DESC, "Setpoint Temperature")
@@ -156,7 +156,7 @@ record(ai, "$(Sys)$(Dev)Gain:D$(N_GAIN)-RB")
 	field(SCAN, "10 second")
 }
 
-record(longout, "$(Sys)$(Dev)Gain:PB$(N_GAIN)-SP")
+record(ao, "$(Sys)$(Dev)Gain:PB$(N_GAIN)-SP")
 {
 	field(DTYP, "stream")
 	field(DESC, "Proportional Band 1")
@@ -169,7 +169,7 @@ record(longout, "$(Sys)$(Dev)Gain:PB$(N_GAIN)-SP")
 	info(autosaveFields_pass0, "VAL")
 }
 
-record(longout, "$(Sys)$(Dev)Gain:I$(N_GAIN)-SP")
+record(ao, "$(Sys)$(Dev)Gain:I$(N_GAIN)-SP")
 {
 	field(DTYP, "stream")
 	field(DESC, "Rate 1")
@@ -182,7 +182,7 @@ record(longout, "$(Sys)$(Dev)Gain:I$(N_GAIN)-SP")
 	info(autosaveFields_pass0, "VAL")
 }
 
-record(longout, "$(Sys)$(Dev)Gain:D$(N_GAIN)-SP")
+record(ao, "$(Sys)$(Dev)Gain:D$(N_GAIN)-SP")
 {
 	field(DTYP, "stream")
 	field(DESC, "Reset 1")
