@@ -6,6 +6,8 @@ record(aSub, "$(Sys){Racks}T-AlarmSum_asub"){
 }
 
 record(ao, "$(Sys){Racks}T-AlarmSum"){
+	field(HHSV, "MAJOR")
+	field(HIHI, ".5")
 }
 
 record(ao, "$(Sys){Racks}Version"){
