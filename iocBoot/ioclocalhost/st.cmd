@@ -4,11 +4,10 @@
 ## everywhere it appears in this file
 
 < envPaths
+< /epics/common/xf08ida-ioc1-netsetup.cmd
 
 epicsEnvSet("ENGINEER", "Engineer's name x5555")
 epicsEnvSet("LOCATION", "XF:xxIDA{RG:A2}")
-epicsEnvSet("EPICS_CA_AUTO_ADDR_LIST","NO")
-epicsEnvSet("EPICS_CA_ADDR_LIST","10.xx.0.255")
 
 cd ${TOP}
 
